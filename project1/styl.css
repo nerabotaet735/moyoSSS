@@ -1,0 +1,47 @@
+#main1,#main2{
+    display: flex;
+}
+body{
+    font-family: Century,Serif;
+    text-align: center;
+}
+a{
+    color:white;
+}
+header,footer{
+    background-color: indigo;
+    color:white;
+    font-style:italic;
+    padding: 2px;
+}
+section{
+    width:50%;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    padding:3px;
+    margin:10px;
+    border: 2px dotted slateblue;
+}
+button{
+    background-color: slateblue;
+    color:white;
+    border:none;
+    padding: 10px 20px 10px 20px;
+    margin-top:10px;
+    
+
+}
+button:hover{
+    background-color: indigo;
+}
+.range{
+    width:80%;
+}
+nav{
+display:inline;
+}
