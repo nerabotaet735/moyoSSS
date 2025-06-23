@@ -1,0 +1,60 @@
+body{
+    color:white;
+    font-family: Georgia;
+}
+footer,header{
+    background-color: maroon;
+    text-align: center;
+    padding:2px;
+}
+#left,#right,#mid{
+    background-color: lightsalmon;
+    height: 527px;
+}
+#left,#right{
+    width: 15%;
+}
+#mid{
+    width:70%;
+}
+#galeria,main{
+    display:flex;
+}
+button{
+    background-color: lightsalmon;
+    color:maroon;
+    display: block;
+    border:none;
+    font-size: 400%;
+    margin:auto;
+    padding-top: 210px;
+
+}
+#galeria{
+    background-color: maroon;}
+#galeria img{
+    height: 70px;
+    padding-left: 50px;
+    animation:myAnimation forwards 4s;
+}
+@keyframes myAnimation {
+    from{
+        padding-left: 50px;
+    }
+    to{
+        padding-left: 0px;
+    }
+}
+#mid img {
+    display: block;
+    margin:auto;
+    padding-top:45px;
+}
+#mid img {
+    transition: 5s;
+
+}
+#mid img:hover{
+    transform: scale(120%);
+}
+a{color:white;}
