@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biuro turystyczne</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<script>let currentImg=1;
+    function previousImg(){
+        if(currentImg===1)currentImg=7
+        else currentImg--
+        
+        let mainImg=document.getElementById('mainImg')
+        mainImg.src=currentImg+ ".jpg"
+        
+    }
+    function nextImg(){
+        if(currentImg===7)currentImg=1
+        else currentImg++
+        let mainImg=document.getElementById('mainImg')
+        mainImg.src=currentImg+".jpg"
+        
+    }
+</script>
+<body>
+    <header>
+        <h1>Zwiedzamy Polskę</h1>
+    </header>
+    <main>
+        <section id="left">
+            <button onclick="previousImg()" type="button"><</button>
+        </section>
+        <section id="mid">
+            <img id="mainImg" src="1.jpg"alt="Aktywne zdjęcie">
+        </section>
+        <section id="right">
+            <button onclick="nextImg()" type="button">></button>
 
+        </section>
+    </main>
+    <section id="galeria">
+        <img src="1.jpg" alt="Gdańsk">
+        <img src="2.jpg" alt="Kraków">
+        <img src="3.jpg" alt = "Niedzica">
+        <img src="4.jpg" alt="Pieniny">
+        <img src="5.jpg" alt="Szklarska Poręba">
+        <img src="6.jpg" alt="Tatry">
+        <img src="7.jpg" alt="Wrocław">
+        
+
+    </section>
+    <footer>
+        <h3>Autorem galerii jest: </h3><p>08221212279</p>
+        <a href="http://pixabay.com">Więcej zdjęć</a>
+    </footer>
+</body>
+</html>
