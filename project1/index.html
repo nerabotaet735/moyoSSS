@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<script>
+    function applyEffect(){
+        const img=document.getElementById('imgBee')
+        const radios=document.getElementsByName('pszczola')
+        let selectedEffect=""
+        for(let radio of radios){
+            if(radio.checked){
+                selectedEffect=radio.value
+            }
+        }
+        
+        if(selectedEffect==="sepia"){
+            img.style.filter="sepia(100%)";
+        }
+        else if(selectedEffect==="blur"){
+            img.style.filter="blur(5px)"
+        }
+        else if(selectedEffect==="negatyw") img.style.filter="invert(100%)"
+    }
+    function applyEffect2(){
+        const img = document.getElementById('pomarancza')
+        if(img.style.filter!=="grayscale(0%)")img.style.filter="grayscale(0%)"
+        else if (img.style.filter!=="grayscale(100%)")img.style.filter="grayscale(100%)"
+    } 
+    function applyEffect4(){
+        document.getElementById('owoce').style.filter=`blur(${document.getElementsByName('range1')[0].value}px)`
+    }
+    function applyEffect5(){
+        const img=document.getElementById('zolw')
+        const brightness=document.getElementsByName('range2')[0].value
+      
+        img.style.filter=`brightness(${brightness}%)`    
+    }
+</script>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+    <main id ="main1">
+        <section>
+            <img id="imgBee" src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku">
+            <label><input  type="radio" name="pszczola" value="blur">Blur</label>
+            <label><input type="radio" name="pszczola" value="sepia">Sepia</label>
+            <label><input type="radio" name="pszczola" value="negatyw">Negatyw</label>
+            <button onclick="applyEffect()">Zastosuj</button>
+        </section> 
+        <section>
+            <img id="pomarancza" src="pomarancza.jpg" alt = "drzewo pomarańczy">
+            <nav>
+                <button  onclick="applyEffect2()">Kolorowy</button>
+                <button  onclick="applyEffect2()">Czarno-biały</button>
+            </nav>
+        </section>
+    </main>
+    <main id ="main2">
+
+        <section>
+            <img id="owoce" src="owoce.jpg" alt="Kosz pełen owoców">
+            <input name="range1" class="range" type="range" min="0" max="100" value="100">
+            <button onclick="applyEffect4()">Zastosuj</button>
+         </section>
+        <section>
+            <img id="zolw" src="zolw.jpg" alt = "Żółw w wodzie">
+            <input name="range2"  class="range" type="range" min="0" max="250">
+            <button onclick="applyEffect5()">Zastosuj</button>
+
+
+        </section>
+    </main>
+    <footer>
+        <a href="http://www.css.com/"><p>Zobacz inne efekty obrazu</p></a>
+        <p>Stronę wykonał: 08221212279</p>
+    </footer>
+</body>
+</html>
