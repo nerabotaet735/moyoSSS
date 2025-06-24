@@ -54,3 +54,6 @@ footer{
 i{
     cursor:pointer;
 }
+header img{
+     height: 100%;
+}
