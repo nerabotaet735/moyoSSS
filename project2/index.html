@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel = "stylesheet" href="styl.css">
+</head> 
+<script>
+    function f1 (){
+        let imie=document.getElementById('imie').value
+        let nazwisko=document.getElementById('nazwisko').value
+        const section2 = document.querySelector('#s2')
+        const section1 = document.querySelector('#s1')
 
+        if(imie.length!==0&&nazwisko.length!==0){
+            section1.style.visibility="hidden"
+            section2.style.visibility="visible"
+
+        }
+    }
+    function f2(){
+        let email = document.getElementById('email').value
+        let tel = document.getElementById('tel').value
+        const  section2 = document.querySelector('#s2')
+        const  section3 = document.querySelector('#s3')
+        if(email.length!==0&&tel.length!==0){
+            section2.style.visibility="hidden"
+            section3.style.visibility="visible"
+
+        }
+
+    }
+   function f3() {
+    let pas = document.getElementById('pas').value;
+    let pasRepet = document.getElementById('pasRepet').value;
+
+    if (pas.length !== 0 &&pasRepet.length !== 0) {
+          if (pas !== pasRepet) {
+        alert("Podane hasła różnią się");
+        return;
+    }
+    }
+
+  
+
+    
+    let imie = document.getElementById('imie').value;
+    let nazwisko = document.getElementById('nazwisko').value;
+    console.log("Witaj " + imie + " " + nazwisko);
+}
+
+</script>
+<body>
+    <header>
+        <h1>
+            Formularz rejestracyjny konferencji <b><i>Nasze Kwiaty</i></b>
+        </h1>
+    </header>
+    <main>
+        <form>
+            <section id = "s1">
+                <h2>Dane osobowe</h2>
+                <label><input id ="imie" class="PE" required placeholder="Wpisz imię..." type="text"></label>
+                <label><input id = "nazwisko"  class="PE" required placeholder="Wpisz nazwisko..." type="text"></label>
+              <button type="button" onclick="f1()">Następna karta</button>
+
+             </section>
+             <section id = "s2">
+                <h2>Dane kontaktowe</h2>
+                <label><input id="email"  class="PE" type="email" placeholder="Twój e-mail..."></label>
+                <label><input id="tel"  class="PE" type="tel" placeholder="Twój numer telefonu"></label>
+                <button type="button" onclick="f2()">Następna karta</button>
+             </section>
+             <section id = "s3">
+                <h2>Hasło do logowania</h2>
+                <label><input id="pas" class="PE" type="password"placeholder="Podaj hasło"></label>
+                <label><input id="pasRepet" class="PE" type="password" placeholder="Powtórz hasło"></label>
+                  <button type="button" onclick="f3()">Zatwierdź</button>
+             </section>
+        </form>
+    </main>
+    <nav>
+        <footer>
+             <video controls>
+                <source src="motyl.mp4" type="video/mp4">
+                Przeglądarka nie obsługuje tego formatu.
+            </video>
+        </footer>
+        <footer>
+            <h3>Plan konferencji</h3>
+            <table>
+                <tr>
+                    <td>9:00 - 12:00</td>
+                    <td>Pielęgnacja roślin</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 15:00</td>
+                    <td>Targi kwiatowe</td>
+                </tr>
+            </table>
+        </footer>
+        <footer>
+            <p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p>
+        
+        </footer>
+        <footer>
+            <p>Formularz wykonał: 08221212279</p>
+        </footer>
+</nav>
+</body>
+</html>
