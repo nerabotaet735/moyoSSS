@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<script>
+    function send(){
+        let text= document.getElementById('odpowiedz').value
+        if(text.length===0){
+            alert("pusta wiadomość")
+            return
+        }
+        let section = document.createElement("section")
+        section.classList.add("Jolanta")
+        let img = document.createElement("img")
+        img.setAttribute('src', 'Jolka.jpg')
+        let p = document.createElement('p')
+        p.textContent=text
+        section.appendChild(img)
+        section.appendChild(p)
+        document.getElementById("text").appendChild(section); 
+        document.getElementById('odpowiedz').value=""
+    
+    }
+    function send2(){
+        let  odpowiedzi = ["Świetnie!",
+"Kto gra główną rolę?",
+"Lubisz filmy Tego reżysera?",
+"Będę 10 minut wcześniej",
+"Może kupimy sobie popcorn?",
+"Ja wolę Colę",
+"Zaproszę jeszcze Grześka",
+"Tydzień temu też byłem w kinie na Diunie",
+"Ja funduję bilety"]
+       let index= Math.floor(Math.random()*9)
+        console.log(index)
+        let section =document.createElement("section")
+        section.classList.add("Krzysiek")
+        let img = document.createElement("img")
+        img.setAttribute('src','Krzysiek.jpg')
+        let p = document.createElement("p")
+        p.textContent=odpowiedzi[index]
+        section.appendChild(img)
+        section.appendChild(p)
+        document.getElementById("text").appendChild(section)
+
+    }
+</script>
+<body>
+    <nav>
+         <main>
+        <header>
+        <h2>Chat</h2>
+    </header>
+        <section id="chat">
+            <section id ="text">
+            <section class="Jolanta">
+                <img src="Jolka.jpg">
+                <p>Cześć idziesz jutro do kina?</p>
+            </section>
+            <section class="Krzysiek">
+                <img src="Krzysiek.jpg">
+                <p>Tak! A ty?</p>
+            </section>
+            </section>
+            <label>Wpisz wiadomość <input id ="odpowiedz" type="text"><button onclick="send()" type="button">Wyślij</button></label><br>
+            <label><button onclick="send2()" type="button">Generuj losową odpowiedź</button></label>
+        </section>
+    </main>
+    <aside>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne</li>
+            <ol>
+                <li>Turystyczny</li>
+                <li>Żeglarski</li>
+                <li>Filatelistyczny</li>
+                <li>Hodowla zwierzątek domowych </li>
+            </ol>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="Jolka.jpg"alt ="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src ="Krzysiek.jpg" alt = "Krzysztof Łukasiński">
+    </aside>
+   
+    </nav>
+    <footer>
+        <h5>Chat wykonał: 08221212279</h5>
+    </footer>
+</body>
+</html>
